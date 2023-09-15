@@ -1,13 +1,18 @@
 # -*- coding: cp1252 -*-
 
 def main():
-    num = int(input("Give a number:"))
-    pwrOfTwo(num)
+    while True:
+        inputText = input("Write something (quit ends): ")
+        if inputText == "quit":
+            break
+        elif len(inputText) < 10:
+            tester()
+        else:
+            tester(inputText)
 
-def pwrOfTwo(num):
-    pot = pow(2, num)
-    print("The result is ", pot)
-
-
+def tester(givenstring = "Too short"):
+    print(givenstring)
+    
+    
 if __name__ == "__main__":
     main()
