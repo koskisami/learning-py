@@ -1,0 +1,28 @@
+shoppingcart = []
+
+while True:
+    print("Would you like to\n\
+          (1)Add or\n\
+          (2)Remove items or\n\
+          (3)Quit?: ")
+    
+    sel = input()
+
+    if sel == '1':
+        item = input("What will be added?: ")
+        shoppingcart.append(item)
+    elif sel == '2':
+        print(f"There are {len(shoppingcart)} items in the list.")
+        index = input("Which item is deleted?: ")
+        i = int(index)
+        if 1 <= i <= len(shoppingcart):
+            del shoppingcart[int(i-1)]
+        else:
+            print("Incorrect selection.")
+    elif sel == '3':
+        print("The following items remain in the list:")
+        for item in shoppingcart:
+            print(item)
+        break
+    else:
+        print("Incorrect selection.")
